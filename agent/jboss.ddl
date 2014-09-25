@@ -25,6 +25,14 @@ action "cli", :description => "Execute a CLI command" do
           :optional    => false,
           :maxlength   => 30
 
+	input :command,
+          :prompt      => "CLI user password",
+          :description => "The CLI user password",
+          :type        => :string,
+          :validation  => '^[a-zA-Z\-_()=:,\/\d]+$',
+          :optional    => false,
+          :maxlength   => 30
+
 	output :msg,
            :description => "The message we received",
            :display_as  => "Message"
